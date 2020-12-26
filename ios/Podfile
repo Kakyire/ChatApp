@@ -16,14 +16,6 @@ def flutter_root
     raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
   end
 
-
-
-# Add the pods for any other Firebase products you want to use in your app
-# For example, to use Firebase Authentication and Cloud Firestore
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
-pod 'Firebase/Core'
-
   File.foreach(generated_xcode_build_settings_path) do |line|
     matches = line.match(/FLUTTER_ROOT\=(.*)/)
     return matches[1].strip if matches
@@ -49,4 +41,3 @@ post_install do |installer|
     end
   end
 end
-

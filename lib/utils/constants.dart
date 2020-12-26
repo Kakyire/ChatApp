@@ -37,6 +37,8 @@ const InputDecoration kTextFieldDecoration = InputDecoration(
   ),
 );
 
+const Radius kBubbleRadius = Radius.circular(15.0);
+
 const BoxDecoration kLoginButtonDecoration = BoxDecoration(
   color: kAppBlueColor,
   borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -49,4 +51,5 @@ const BoxDecoration kRegisterButtonDecoration = BoxDecoration(
 //Firebase fields
 const String kText = 'text';
 const String kSender = 'sender';
+const String kTimeStamp = 'timestamp';
 const String kMessageCollection = 'messages';

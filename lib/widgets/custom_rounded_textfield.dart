@@ -9,6 +9,11 @@ class RoundedTextField extends StatelessWidget {
     this.onChanged,
     this.controller,
     this.errorText,
+    this.fillColor,
+    this.filled,
+    this.textColor,
+    this.cursorColor,
+    this.hintColor,
   });
 
   final TextInputType inputType;
@@ -17,17 +22,29 @@ class RoundedTextField extends StatelessWidget {
   final Function onChanged;
   final TextEditingController controller;
   final String errorText;
+  final Color fillColor;
+  final bool filled;
+  final Color textColor;
+  final Color cursorColor;
+  final Color hintColor;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
       onChanged: onChanged,
+      cursorColor: cursorColor,
+      style: TextStyle(color: textColor),
       obscureText: hideFieldText,
       keyboardType: TextInputType.emailAddress,
       textAlign: TextAlign.center,
-      decoration:
-          kTextFieldDecoration.copyWith(hintText: hint, errorText: errorText),
+      decoration: kTextFieldDecoration.copyWith(
+        hintText: hint,
+        hintStyle: TextStyle(color: hintColor),
+        errorText: errorText,
+        fillColor: fillColor,
+        filled: filled,
+      ),
     );
   }
 }

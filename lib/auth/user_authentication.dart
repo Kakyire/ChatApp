@@ -54,4 +54,9 @@ class UserAuthentication {
       print(e);
     }
   }
+
+  void signOut() {
+    _auth.signOut();
+    Navigator.pushReplacementNamed(context, kWelcomeRoute);
+  }
 }
